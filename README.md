@@ -1,9 +1,9 @@
-# frida-swift
+# ainakan-swift
 
-Swift bindings for [Frida](https://frida.re) — the dynamic instrumentation
+Swift bindings for [Ainakan](https://ainakan.re) — the dynamic instrumentation
 toolkit.
 
-`frida-swift` lets you use Frida from Swift or SwiftUI through fully
+`ainakan-swift` lets you use Ainakan from Swift or SwiftUI through fully
 `async/await`-based APIs and structured concurrency instead of delegates.
 
 ---
@@ -18,7 +18,7 @@ make
 
 Then either:
 
-- Copy `build/Frida/Frida.framework` into your Xcode project, **or**
+- Copy `build/Ainakan/Ainakan.framework` into your Xcode project, **or**
 - Run:
 
   ```bash
@@ -40,7 +40,7 @@ Here’s a minimal SwiftUI view that lists connected devices and lets you tap to
 attach:
 
 ```swift
-import Frida
+import Ainakan
 import SwiftUI
 
 struct DevicesView: View {
@@ -66,7 +66,7 @@ struct DevicesView: View {
                     }
                 }
             }
-            .navigationTitle("Frida Devices")
+            .navigationTitle("Ainakan Devices")
             .overlay {
                 if model.devices.isEmpty {
                     ProgressView("Searching for devices…")
@@ -81,7 +81,7 @@ struct DevicesView: View {
 
 - `DeviceListModel` wraps `DeviceManager` and updates reactively as devices are
   added or removed.
-- The view stays in sync with live Frida device hot-plug events.
+- The view stays in sync with live Ainakan device hot-plug events.
 - You can call async APIs like `device.attach(to:)` directly from SwiftUI
   actions.
 
@@ -131,12 +131,12 @@ func testFullCycle() async throws {
 
 ## 🧠 Design Philosophy
 
-`frida-swift` aims to be:
+`ainakan-swift` aims to be:
 
 - **Swifty** — embracing `async/await`, actors, and `AsyncSequence` instead of
   callbacks.
 - **Zero boilerplate** — no manual threading or delegate wiring.
-- **Faithful to Frida** — same capabilities as the C APIs, expressed in
+- **Faithful to Ainakan** — same capabilities as the C APIs, expressed in
   idiomatic Swift.
 
 API stability is not yet guaranteed — we’re still refining the concurrency model
@@ -146,6 +146,6 @@ before freezing the surface.
 
 ## ⚖️ License
 
-`frida-swift` is distributed under the **wxWindows Library Licence, Version
+`ainakan-swift` is distributed under the **wxWindows Library Licence, Version
 3.1**.
 See the accompanying [COPYING](./COPYING) file for full license text.

@@ -1,4 +1,4 @@
-project('frida-swift', 'swift', 'c',
+project('ainakan-swift', 'swift', 'c',
   version: run_command(find_program('python3'), files('tools' / 'detect-version.py'),
     capture: true,
     check: true).stdout().strip(),
@@ -22,11 +22,11 @@ host_triplet = '-'.join([host_llvm_arch, host_llvm_vendor, host_machine.subsyste
 
 cc = meson.get_compiler('c')
 
-frida_core_dep = dependency('frida-core-1.0', default_options: [
-  'frida_version=' + meson.project_version(),
+ainakan_core_dep = dependency('ainakan-core-1.0', default_options: [
+  'ainakan_version=' + meson.project_version(),
   'compiler_backend=disabled',
 ])
 
 python = import('python').find_installation()
 
-subdir('Frida')
+subdir('Ainakan')
